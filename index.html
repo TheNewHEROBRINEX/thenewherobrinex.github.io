@@ -1,17 +1,43 @@
+<html>
+<head></head>
 <body style="position: absolute; top: 35%; left: 50%; transform: translateX(-50%) translateY(-50%);">
   <h1 style="font-size:400%">
-    <a id="title" href="https://github.com/TheNewHEROBRINEX/" style="text-decoration:none;">TheNewHEROBRINE</a>
+    <a id="title" href="https://github.com/TheNewHEROBRINEX/" style="text-decoration: none; color: black">TheNewHEROBRINE</a>
   </h1>
   <script>
-  alert("Click on my nickname to go to my github!");
-    function changeTitleColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-        document.getElementById("title").style.color = color;
-      }
+
+  class TitleColorChanger{
+  	constructor(id){
+  		if (typeof id === 'undefined')
+    		throw new Error('id undefined');
+  		this.title = document.getElementById(id);
+  		this.intervalId;
+  	}
+
+  	changeTitleColor(){
+  		var letters = '0123456789ABCDEF';
+  		var color = '#';
+      	for (var i = 0; i < 6; i++ ) {
+        	color += letters[Math.floor(Math.random() * 16)];
+        	this.title.style.color = color;
+        }
     }
-    window.setInterval(changeTitleColor, 250);
-  </script>
+
+    start(milliseconds){
+    	if (typeof milliseconds === 'undefined') {
+    		milliseconds = 1000;
+    	};
+  		if (typeof this.intervalId !== 'undefined')
+  			this.stop();
+  		this.changeTitleColor();
+  		this.intervalId = setInterval(this.changeTitleColor, milliseconds);
+    }
+
+    stop(){
+    	if (typeof this.intervalId !== 'undefined')
+    		clearInterval(this.intervalId);
+    }
+  }
+</script>
 </body>
+</html>
