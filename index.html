@@ -1,14 +1,16 @@
-<body style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);">
-<h1 id="title" style="font-size:400%">TheNewHEROBRINE</h1>
-<script>
-function changeTitleColor() {
-var letters = '0123456789ABCDEF';
-var color = '#';
-for (var i = 0; i < 6; i++ ) {
-color += letters[Math.floor(Math.random() * 16)];
-document.getElementById("title").style.color = color;
-}
-}
-window.setInterval(changeTitleColor, 250);
-</script>
+<body style="position: absolute; top: 35%; left: 50%; transform: translateX(-50%) translateY(-50%);">
+  <h1 id="title" style="font-size:400%">
+    <a href="https://github.com/TheNewHEROBRINEX/" style="text-decoration:none;">TheNewHEROBRINE</a>
+  </h1>
+  <script>
+    function changeTitleColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+        document.getElementById("title").style.color = color;
+      }
+    }
+    window.setInterval(changeTitleColor, 250);
+  </script>
 </body>
