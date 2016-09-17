@@ -22,11 +22,11 @@
         }
     }
 
-    start(milliseconds = 0){
+    start(){
   		if (typeof this.intervalId !== 'undefined')
   			this.stop();
   		this.changeTitleColor();
-  		this.intervalId = setInterval(this.changeTitleColor, milliseconds);
+  		this.intervalId = setInterval(this.changeTitleColor, 0);
     }
 
     stop(){
@@ -48,11 +48,11 @@
         }
     }
 
-    start(milliseconds = 0){
+    start(){
       if (typeof this.intervalId !== 'undefined')
         this.stop();
       BodyColorChanger.changeBodyColor();
-      this.intervalId = setInterval(BodyColorChanger.changeBodyColor, milliseconds);
+      this.intervalId = setInterval(BodyColorChanger.changeBodyColor, 0);
     }
 
     stop(){
